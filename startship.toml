@@ -1,0 +1,93 @@
+format = """
+$directory\
+$git_branch\
+$git_status\
+$fill\
+$lua\
+$rust\
+$python\
+$cmake\
+$nodejs\
+$cpp\
+$c\
+$java\
+$aws\
+$docker_context\
+$jobs\
+$cmd_duration\
+$line_break\
+$character"""
+
+add_newline = true
+
+[fill]
+symbol = ' '
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[✗](bold red)"
+vicmd_symbol = "[❮](bold yellow)"
+
+[directory]
+truncation_length = 2
+truncate_to_repo = false
+style = "bold blue"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+"Desktop" = " "
+
+[git_branch]
+symbol = " "
+style = "bold purple"
+format = "on [$symbol$branch]($style) "
+
+[git_status]
+format = "([$all_status$ahead_behind]($style))"
+style = "bold green"
+staged = "✓"
+untracked = ""
+deleted = "×"
+modified = ""
+ahead = ""
+behind = ""
+
+
+[cmd_duration]
+format = "[$duration]($style)"
+style = "bold yellow"
+
+[nodejs]
+format = "[󰎙 $version](bold green) "
+
+[python]
+format = "[󰌠 $version](bold yellow) "
+
+[rust]
+format = "[󱘗 $version](bold red) "
+
+[cpp]
+format = "[󰙲 $version](bold blue) "
+disabled = false
+
+[c]
+format = "[󰙱 $version](bold blue)"
+disabled = false
+
+[java]
+format = "[󰬷 $version](bold red) "
+
+[lua]
+format = "[󰢱 $version](bold cyan) "
+
+[cmake]
+format = "[ $version](bold blue) "
+
+[docker_context]
+format = "[ $context](blue bold)"
+
+[line_break]
+disabled = false
